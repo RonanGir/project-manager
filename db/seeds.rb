@@ -16,7 +16,7 @@ users_attributes = [
     firstname:     'John',
     lastname:      'Doe',
     email:         'john@gmail.com',
-    photo:         ,
+    photo:         File.open(Rails.root.join('db/fixtures/images/users/ronan.jpg')),
     cost_per_hour: 90,
     role:          'developper'
   },
@@ -26,7 +26,7 @@ users_attributes = [
     firstname:     'Chuck',
     lastname:      'Norris',
     email:         'chucky@gmail.com',
-    photo:         ,
+    photo:         File.open(Rails.root.join('db/fixtures/images/users/arnaud.jpg')),
     cost_per_hour: 140,
     role:          'CEO'
   },
@@ -36,7 +36,7 @@ users_attributes = [
     firstname:     'Jane',
     lastname:      'Done',
     email:         'jane@gmail.com',
-    photo:         ,
+    photo:         File.open(Rails.root.join('db/fixtures/images/users/sahar.jpg')),
     cost_per_hour: 140,
     role:          'manager'
   },
@@ -46,7 +46,7 @@ users_attributes = [
     firstname:     'Joan',
     lastname:      'Watson',
     email:         'joan@gmail.com',
-    photo:         ,
+    photo:         File.open(Rails.root.join('db/fixtures/images/users/manon.jpg')),
     cost_per_hour: 60,
     role:          'apprenticeship'
   }
@@ -68,8 +68,8 @@ projects_attributes = [
     sold_price:   900,
     sold_hours:   7,
     total_time:   7,
-    start_date: ,
-    end_date:
+    # start_date: ,
+    # end_date:
   },
   {
     # user_id: ,
@@ -81,8 +81,8 @@ projects_attributes = [
     sold_price:   900,
     sold_hours:   7,
     total_time:   8,
-    start_date: ,
-    end_date:
+    # start_date: ,
+    # end_date:
   },
   {
     # user_id: ,
@@ -94,12 +94,12 @@ projects_attributes = [
     sold_price:   900,
     sold_hours:   7,
     total_time:   6,
-    start_date: ,
-    end_date:
+    # start_date: ,
+    # end_date:
   },
   {
-    user_id: ,
-    tasks_id: ,
+    # user_id: ,
+    # tasks_id: ,
     name:         'AS24',
     description:  'Biggest international Adwords campaign',
     tag:          'SEA',
@@ -107,8 +107,8 @@ projects_attributes = [
     sold_price:   900,
     sold_hours:   7,
     total_time:   8,
-    start_date: ,
-    end_date:
+    # start_date: ,
+    # end_date:
   }
 ]
 Project.create!(projects_attributes)
