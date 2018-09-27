@@ -6,8 +6,8 @@ class CreateProjects < ActiveRecord::Migration[5.1]
       t.string :type
       t.float :total_cost
       t.float :sold_price
-      t.time :sold_hours
-      t.time :total_time
+      t.integer :sold_hours
+      t.integer :total_time
       t.timestamp :start_date
       t.timestamp :end_date
 

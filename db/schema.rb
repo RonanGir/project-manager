@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20180927150634) do
     t.string "tag"
     t.float "total_cost"
     t.float "sold_price"
-    t.time "sold_hours"
-    t.time "total_time"
+    t.integer "sold_hours"
+    t.integer "total_time"
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at", null: false
