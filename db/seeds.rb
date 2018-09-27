@@ -11,44 +11,48 @@ Project.destroy_all
 puts 'Creating users...'
 users_attributes = [
   {
-    # user_id: ,
     # tasks_id: ,
     firstname:     'John',
     lastname:      'Doe',
     email:         'john@gmail.com',
+    password:      '123456'
     photo:         File.open(Rails.root.join('db/fixtures/images/users/ronan.jpg')),
     cost_per_hour: 90,
-    role:          'developper'
+    job:           'developper'
+    role:          'admin'
   },
   {
-    # user_id: ,
     # tasks_id: ,
     firstname:     'Chuck',
     lastname:      'Norris',
     email:         'chucky@gmail.com',
+    password:      '123456'
     photo:         File.open(Rails.root.join('db/fixtures/images/users/arnaud.jpg')),
     cost_per_hour: 140,
-    role:          'CEO'
+    job:           'CEO'
+    role:          'editor'
   },
   {
-    # user_id: ,
     # tasks_id: ,
     firstname:     'Jane',
     lastname:      'Done',
     email:         'jane@gmail.com',
+    password:      '123456'
     photo:         File.open(Rails.root.join('db/fixtures/images/users/sahar.jpg')),
     cost_per_hour: 140,
-    role:          'manager'
+    job:           'manager'
+    role:          'editor'
   },
   {
-    # user_id: ,
     # tasks_id: ,
     firstname:     'Joan',
     lastname:      'Watson',
     email:         'joan@gmail.com',
+    password:      '123456'
     photo:         File.open(Rails.root.join('db/fixtures/images/users/manon.jpg')),
     cost_per_hour: 60,
-    role:          'apprenticeship'
+    job:           'apprenticeship'
+    role:          'viewer'
   }
 ]
 
@@ -59,7 +63,7 @@ puts 'Finished!'
 puts 'Creating projects...'
 projects_attributes = [
   {
-    # user_id: ,
+    user_id:      1,
     # tasks_id: ,
     name:         'LLA Avocat',
     description:  'These guys are lawyer and want a new site to find more clients',
@@ -68,11 +72,11 @@ projects_attributes = [
     sold_price:   900,
     sold_hours:   7,
     total_time:   7,
-    # start_date: ,
-    # end_date:
+    start_date:   '2020-02-02',
+    end_date:     '2020-02-02'
   },
   {
-    # user_id: ,
+    user_id:      1,
     # tasks_id: ,
     name:         'Bonjour Concept Store',
     description:  'A cool shop in Paris',
@@ -81,11 +85,11 @@ projects_attributes = [
     sold_price:   900,
     sold_hours:   7,
     total_time:   8,
-    # start_date: ,
-    # end_date:
+    start_date:   '2020-02-02',
+    end_date:     '2020-02-02'
   },
   {
-    # user_id: ,
+    user_id:      1,
     # tasks_id: ,
     name:         'Jet Evasion',
     description:  'Many cool activities to do on the sea in La Baule',
@@ -94,11 +98,11 @@ projects_attributes = [
     sold_price:   900,
     sold_hours:   7,
     total_time:   6,
-    # start_date: ,
-    # end_date:
+    start_date:   '2010-06-18',
+    end_date:     '2019-02-02'
   },
   {
-    # user_id: ,
+    user_id:      1,
     # tasks_id: ,
     name:         'AS24',
     description:  'Biggest international Adwords campaign',
@@ -107,9 +111,106 @@ projects_attributes = [
     sold_price:   900,
     sold_hours:   7,
     total_time:   8,
-    # start_date: ,
-    # end_date:
+    start_date:   '2015-01-20',
+    end_date:     '2018-12-30'
   }
 ]
 Project.create!(projects_attributes)
+puts 'Finished!'
+
+
+puts 'Creating tasks...'
+tasks_attributes = [
+  {
+    user_id:    1,
+    name:       'Init Site',
+    description:'Launch Wippy Script to make the website',
+    tag:        'dev',
+    state:      'todo',
+    priority:   'high',
+    time:       1,
+    due_date:   '2020-01-01'
+  },
+  {
+    user_id:    2,
+    name:       'Create promotion campaign for january sold',
+    description:'Launch Wippy Script to make the website',
+    tag:        'sea',
+    state:      'ongoing',
+    priority:   'high',
+    time:       1,
+    due_date:   '2020-01-01'
+  },
+  {
+    user_id:    3,
+    name:       'Init Site',
+    description:'Launch Wippy Script to make the website',
+    tag:        'dev',
+    state:      'todo',
+    priority:   'high',
+    time:       1,
+    due_date:   '2020-01-01'
+  },
+  {
+    user_id:    4,
+    name:       'Init Site',
+    description:'Launch Wippy Script to make the website',
+    tag:        'dev',
+    state:      'todo',
+    priority:   'high',
+    time:       1,
+    due_date:   '2020-01-01'
+  },
+  {
+    user_id:    1,
+    name:       'Init Site',
+    description:'Launch Wippy Script to make the website',
+    tag:        'dev',
+    state:      'ongoing',
+    priority:   'low',
+    time:       1,
+    due_date:   '2019-01-01'
+  },
+  {
+    user_id:    2,
+    name:       'Init Site',
+    description:'Launch Wippy Script to make the website',
+    tag:        'sea',
+    state:      'todo',
+    priority:   'high',
+    time:       1,
+    due_date:   '2020-01-01'
+  },
+  {
+    user_id:    3,
+    name:       'Nothing',
+    description:'So easy to have nothing to do',
+    tag:        'project_management',
+    state:      'done',
+    priority:   'high',
+    time:       1,
+    due_date:   '2020-01-01'
+  },
+  {
+    user_id:    4,
+    name:       'Init Site',
+    description:'Launch Wippy Script to make the website',
+    tag:        'seo',
+    state:      'ongoing',
+    priority:   'high',
+    time:       1,
+    due_date:   '2020-01-01'
+  },
+  {
+    user_id:    1,
+    name:       'Clap in hands',
+    description:'Launch Wippy Script to make the website',
+    tag:        'project_management',
+    state:      'done',
+    priority:   'middle',
+    time:       1,
+    due_date:   '2018-01-01'
+  }
+]
+Project.create!(tasks_attributes)
 puts 'Finished!'
