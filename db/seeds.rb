@@ -6,7 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Cleaning database...'
+User.destroy_all
 Project.destroy_all
+Task.destroy_all
+
+puts 'Your DB has been cleaned'
 
 puts 'Creating users...'
 users_attributes = [
@@ -53,14 +57,13 @@ users_attributes = [
 ]
 
 
-Project.create!(users_attributes)
+User.create!(users_attributes)
 puts 'Finished!'
 
 puts 'Creating projects...'
 projects_attributes = [
   {
     user_id:      1,
-    # tasks_id: ,
     name:         'LLA Avocat',
     description:  'These guys are lawyer and want a new site to find more clients',
     tag:          'Refonte de site',
@@ -73,7 +76,6 @@ projects_attributes = [
   },
   {
     user_id:      1,
-    # tasks_id: ,
     name:         'Bonjour Concept Store',
     description:  'A cool shop in Paris',
     tag:          'Refonte de site',
@@ -86,7 +88,6 @@ projects_attributes = [
   },
   {
     user_id:      1,
-    # tasks_id: ,
     name:         'Jet Evasion',
     description:  'Many cool activities to do on the sea in La Baule',
     tag:          'Refonte de site',
@@ -99,7 +100,6 @@ projects_attributes = [
   },
   {
     user_id:      1,
-    # tasks_id: ,
     name:         'AS24',
     description:  'Biggest international Adwords campaign',
     tag:          'SEA',
@@ -208,5 +208,5 @@ tasks_attributes = [
     due_date:   '2018-01-01'
   }
 ]
-Project.create!(tasks_attributes)
+Task.create!(tasks_attributes)
 puts 'Finished!'
