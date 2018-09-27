@@ -41,16 +41,13 @@
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="company_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
 <row name="tasks_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="tasks" row="id" />
 </row>
 <row name="user_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="workers" row="id" />
+<default>NULL</default><relation table="users" row="id" />
 </row>
 <row name="name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
@@ -89,7 +86,7 @@
 <default>NULL</default></row>
 <row name="user_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="workers" row="id" />
+<default>NULL</default><relation table="users" row="id" />
 </row>
 <row name="name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
@@ -103,23 +100,23 @@
 <row name="priority" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="type" null="1" autoincrement="0">
+<row name="tag" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="time" null="1" autoincrement="0">
-<datatype>TIME</datatype>
+<row name="end_date" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="due_date" null="1" autoincrement="0">
-<datatype>DATE</datatype>
+<datatype>VARCHAR</datatype>
 <default>NULL</default></row>
-<row name="done?" null="1" autoincrement="0">
-<datatype>BINARY</datatype>
+<row name="created_at" null="1" autoincrement="0">
+<datatype>DATETIME</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
-<table x="909" y="487" name="workers">
+<table x="909" y="487" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -132,14 +129,20 @@
 <row name="email" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
 <default>NULL</default></row>
+<row name="password" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
 <row name="photo" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
+<datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <row name="cost_per_hour" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="role" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="job" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
@@ -157,7 +160,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="1171" y="491" name="worker_teams">
+<table x="1201" y="466" name="user_teams">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -165,9 +168,9 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="Teams" row="id" />
 </row>
-<row name="worker_id" null="1" autoincrement="0">
+<row name="user_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="workers" row="id" />
+<default>NULL</default><relation table="users" row="id" />
 </row>
 <key type="PRIMARY" name="">
 <part>id</part>

@@ -11,47 +11,43 @@ Project.destroy_all
 puts 'Creating users...'
 users_attributes = [
   {
-    # tasks_id: ,
     firstname:     'John',
     lastname:      'Doe',
     email:         'john@gmail.com',
-    password:      '123456'
+    password:      '123456',
     photo:         File.open(Rails.root.join('db/fixtures/images/users/ronan.jpg')),
     cost_per_hour: 90,
-    job:           'developper'
+    job:           'developper',
     role:          'admin'
   },
   {
-    # tasks_id: ,
     firstname:     'Chuck',
     lastname:      'Norris',
     email:         'chucky@gmail.com',
-    password:      '123456'
+    password:      '123456',
     photo:         File.open(Rails.root.join('db/fixtures/images/users/arnaud.jpg')),
     cost_per_hour: 140,
-    job:           'CEO'
+    job:           'CEO',
     role:          'editor'
   },
   {
-    # tasks_id: ,
     firstname:     'Jane',
     lastname:      'Done',
     email:         'jane@gmail.com',
-    password:      '123456'
+    password:      '123456',
     photo:         File.open(Rails.root.join('db/fixtures/images/users/sahar.jpg')),
     cost_per_hour: 140,
-    job:           'manager'
+    job:           'manager',
     role:          'editor'
   },
   {
-    # tasks_id: ,
     firstname:     'Joan',
     lastname:      'Watson',
     email:         'joan@gmail.com',
-    password:      '123456'
+    password:      '123456',
     photo:         File.open(Rails.root.join('db/fixtures/images/users/manon.jpg')),
     cost_per_hour: 60,
-    job:           'apprenticeship'
+    job:           'apprenticeship',
     role:          'viewer'
   }
 ]
