@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
     @project.save
 
     if @project.save
-      redirect_to project_index_path
+      redirect_to projects_path
     else
       render :new
     end
@@ -31,7 +31,7 @@ class ProjectsController < ApplicationController
     @project.save
 
     if @project.save
-      redirect_to project_index_path
+      redirect_to projects_path
     else
       render :edit
     end
@@ -40,7 +40,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     #insérer une alerte (votre projet à bien été supprimer)
-    redirect_to project_index_path
+    redirect_to projects_path
   end
 
   private
