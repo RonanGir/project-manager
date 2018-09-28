@@ -1,6 +1,6 @@
 class Task < ApplicationRecord
-  belongs_to :projects, dependent: :destroy
-  belongs_to :users, dependent: :destroy
+  belongs_to :project
+  belongs_to :user
 
   validates :name, :description, :tag, presence: true
 end

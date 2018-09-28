@@ -9,11 +9,13 @@ class TasksController < ApplicationController
   end
 
   def new
-    @tasl = Task.new
+    @project = Project.find(params[:project_id])
+    @task = Task.new
   end
 
   def create
     @task = Task.new(task_params)
+    @task.project = Project.find(params[:project_id])
     @task.save
 
     if @task.save
@@ -24,10 +26,12 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @project = Project.find(params[:project_id])
   end
 
   def update
     @task.update(task_params)
+    @task.project = Project.find(params[:project_id])
     @task.save
 
     if @task.save

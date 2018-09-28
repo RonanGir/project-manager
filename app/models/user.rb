@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
+  has_many   :tasks
+  belongs_to :project
 
   validates :firstname, :lastname, :email, presence: true, on: :update
 
