@@ -4,6 +4,7 @@ ruby '2.3.5'
 
 gem 'devise'
 gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
