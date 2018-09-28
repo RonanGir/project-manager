@@ -37,7 +37,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="447" y="297" name="projects">
+</datatypes><table x="362" y="209" name="projects">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -45,9 +45,9 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="tasks" row="id" />
 </row>
-<row name="user_id" null="1" autoincrement="0">
+<row name="team_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="users" row="id" />
+<default>NULL</default><relation table="teams" row="id" />
 </row>
 <row name="name" null="1" autoincrement="0">
 <datatype>VARCHAR</datatype>
@@ -80,7 +80,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="710" y="67" name="tasks">
+<table x="656" y="145" name="tasks">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -113,7 +113,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="909" y="487" name="users">
+<table x="1072" y="128" name="users">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -146,7 +146,7 @@
 </key>
 <comment>table of user</comment>
 </table>
-<table x="1121" y="304" name="Teams">
+<table x="619" y="538" name="teams">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -157,13 +157,13 @@
 <part>id</part>
 </key>
 </table>
-<table x="1201" y="466" name="user_teams">
+<table x="796" y="509" name="user_teams">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="team_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default><relation table="Teams" row="id" />
+<default>NULL</default><relation table="teams" row="id" />
 </row>
 <row name="user_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
