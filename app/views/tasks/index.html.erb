@@ -1,2 +1,12 @@
-<h1>Tasks#index</h1>
+<h1>Toutes les tâches du projet</h1>
 <p>Find me in app/views/tasks/index.html.erb</p>
+
+<% @tasks.each do |task| %>
+<ul>
+  <li><%= task.name %></li>
+  <li><%= task.description %></li>
+  <li><%= task.priority %></li>
+  <li><%= task.tag %></li>
+  <li><%= task.due_date %></li>
+</ul>
+<% end %>
