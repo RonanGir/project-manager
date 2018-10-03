@@ -2,7 +2,8 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   has_many :tasks
   has_many :user_teams
-  belongs_to :project, through: :user_teams
+  has_many :teams, through: :user_teams
+  has_many :projects, through: :teams
 
   validates :firstname, :lastname, :email, presence: true, on: :update
 

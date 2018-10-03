@@ -9,6 +9,8 @@ puts 'Cleaning database...'
 User.destroy_all
 Project.destroy_all
 Task.destroy_all
+Team.destroy_all
+UserTeam.destroy_all
 
 puts 'Your DB has been cleaned'
 
@@ -56,14 +58,68 @@ users_attributes = [
   }
 ]
 
-
 User.create!(users_attributes)
 puts 'Finished!'
+
+puts 'Creating Teams...'
+teams_attributes = [
+  {
+    name: 'Respoweb'
+  },
+  {
+    name: 'Le Wagon'
+  },
+  {
+    name: 'W3C'
+  },
+]
+
+Team.create!(teams_attributes)
+puts 'Finished!'
+
+puts 'Creating UserTeams...'
+user_teams_attributes = [
+  {
+    team_id: 1,
+    user_id: 1
+  },
+  {
+    team_id: 1,
+    user_id: 2
+  },
+  {
+    team_id: 1,
+    user_id: 3
+  },
+  {
+    team_id: 1,
+    user_id: 4
+  },
+  {
+    team_id: 2,
+    user_id: 1
+  },
+  {
+    team_id: 2,
+    user_id: 2
+  },
+  {
+    team_id: 3,
+    user_id: 3
+  },{
+    team_id: 3,
+    user_id: 4
+  }
+]
+UserTeam.create!(user_teams_attributes)
+puts 'Finished!'
+
+
 
 puts 'Creating projects...'
 projects_attributes = [
   {
-    user_id:      1,
+    team_id:      1,
     name:         'LLA Avocat',
     description:  'These guys are lawyer and want a new site to find more clients',
     tag:          'Refonte de site',
@@ -75,7 +131,7 @@ projects_attributes = [
     end_date:     '2020-02-02'
   },
   {
-    user_id:      1,
+    team_id:      1,
     name:         'Bonjour Concept Store',
     description:  'A cool shop in Paris',
     tag:          'Refonte de site',
@@ -87,7 +143,7 @@ projects_attributes = [
     end_date:     '2020-02-02'
   },
   {
-    user_id:      1,
+    team_id:      1,
     name:         'Jet Evasion',
     description:  'Many cool activities to do on the sea in La Baule',
     tag:          'Refonte de site',
@@ -99,7 +155,7 @@ projects_attributes = [
     end_date:     '2019-02-02'
   },
   {
-    user_id:      1,
+    team_id:      1,
     name:         'AS24',
     description:  'Biggest international Adwords campaign',
     tag:          'SEA',
@@ -119,6 +175,7 @@ puts 'Creating tasks...'
 tasks_attributes = [
   {
     user_id:    1,
+    project_id: 1,
     name:       'Init Site',
     description:'Launch Wippy Script to make the website',
     tag:        'dev',
@@ -129,6 +186,7 @@ tasks_attributes = [
   },
   {
     user_id:    2,
+    project_id: 1,
     name:       'Create promotion campaign for january sold',
     description:'Launch Wippy Script to make the website',
     tag:        'sea',
@@ -139,6 +197,7 @@ tasks_attributes = [
   },
   {
     user_id:    3,
+    project_id: 2,
     name:       'Init Site',
     description:'Launch Wippy Script to make the website',
     tag:        'dev',
@@ -149,6 +208,7 @@ tasks_attributes = [
   },
   {
     user_id:    4,
+    project_id: 1,
     name:       'Init Site',
     description:'Launch Wippy Script to make the website',
     tag:        'dev',
@@ -159,6 +219,7 @@ tasks_attributes = [
   },
   {
     user_id:    1,
+    project_id: 1,
     name:       'Init Site',
     description:'Launch Wippy Script to make the website',
     tag:        'dev',
@@ -169,6 +230,7 @@ tasks_attributes = [
   },
   {
     user_id:    2,
+    project_id: 1,
     name:       'Init Site',
     description:'Launch Wippy Script to make the website',
     tag:        'sea',
@@ -179,6 +241,7 @@ tasks_attributes = [
   },
   {
     user_id:    3,
+    project_id: 1,
     name:       'Nothing',
     description:'So easy to have nothing to do',
     tag:        'project_management',
@@ -189,6 +252,7 @@ tasks_attributes = [
   },
   {
     user_id:    4,
+    project_id: 1,
     name:       'Init Site',
     description:'Launch Wippy Script to make the website',
     tag:        'seo',
@@ -199,6 +263,7 @@ tasks_attributes = [
   },
   {
     user_id:    1,
+    project_id: 3,
     name:       'Clap in hands',
     description:'Launch Wippy Script to make the website',
     tag:        'project_management',
