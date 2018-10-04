@@ -43,6 +43,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     #insérer une alerte (votre projet à bien été supprimer)
+    flash[:notice] = "Votre projet à bien été supprimer !"
     redirect_to projects_path
   end
 
