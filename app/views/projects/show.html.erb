@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-xs-12">
       <h1>Bienvenue <%= current_user.firstname %></h1>
+        <%= link_to "Voir tous les projets", projects_path, class: 'btn btn-primary' %>
     </div>
   </div>
   <div class="row">
@@ -10,7 +11,15 @@
         <li><%= @project.name %></li>
         <li><%= @project.description %></li>
         <li><%= @project.tag %></li>
-        <li><%= link_to "Voir tous les projets", projects_path %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <ul>
+        <li><%= @task.name %></li>
+        <li><%= @task.description %></li>
+        <li><%= @task.tag %></li>
       </ul>
     </div>
   </div>

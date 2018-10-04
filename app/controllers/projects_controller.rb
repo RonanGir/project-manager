@@ -6,6 +6,9 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @task = Task.find_by(params[:project_id])
+    # @tasks = Task.all.where(project_id: 1)
+    @task.project = @project
   end
 
   def new
