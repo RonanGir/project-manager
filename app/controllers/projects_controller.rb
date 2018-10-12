@@ -16,7 +16,6 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.save
-
     if @project.save
       redirect_to projects_path
     else
@@ -50,12 +49,12 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:name,
                                     :description,
                                     :tag,
-                                    :total_cost,
-                                    :total_time,
+                                    # :total_cost,
+                                    # :total_time,
                                     :sold_price,
                                     :sold_hours,
                                     :start_date,
-                                    :end_date,
+                                    # :end_date,
                                     :user_id,
                                     )
   end

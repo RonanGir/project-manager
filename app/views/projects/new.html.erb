@@ -1,2 +1,18 @@
-<h1>Projects#new</h1>
-<p>Find me in app/views/projects/new.html.erb</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="new-form">
+        <%= simple_form_for @project do |f| %>
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.input :tag %>
+          <%= f.input :sold_price %>
+          <%= f.input :sold_hours %>
+          <%= f.input :start_date %>
+          <%= f.submit "Start project", class: "btn btn-success" %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
