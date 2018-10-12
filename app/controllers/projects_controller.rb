@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @tasks = Task.all.where(project_id: 1)
+    @tasks = @project.tasks
   end
 
   def new
@@ -57,7 +57,6 @@ class ProjectsController < ApplicationController
                                     :start_date,
                                     :end_date,
                                     :user_id,
-                                    :task_id
                                     )
   end
 

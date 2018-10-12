@@ -1,17 +1,12 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12">
-      <h1>Bienvenue <%= current_user.firstname %></h1>
+      <div>
+        <h1><%= @project.name %></h1>
+        <span class="badge badge-project"><%= @project.tag %></span>
+      </div>
+      <p><%= @project.description %></p>
         <%= link_to "Voir tous les projets", projects_path, class: 'btn btn-primary' %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <ul>
-        <li><%= @project.name %></li>
-        <li><%= @project.description %></li>
-        <li><%= @project.tag %></li>
-      </ul>
     </div>
   </div>
   <div class="row">

@@ -1,0 +1,27 @@
+/* Project index start */
+
+.project-card {
+  margin: 30px;
+  background-color: $white;
+  min-height: 300px;
+  box-shadow: 5px 5px 5px $dark-gray;
+
+  .project-card-header {
+    background-color: $gray;
+    color: $white;
+    padding: 15px;
+    min-height: 150px;
+  }
+  .project-card-content {
+    padding: 15px;
+    min-height: 150px;
+  }
+
+}
+
+
+
+
+
+
+/* Project index stop */

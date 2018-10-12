@@ -57,6 +57,7 @@ class TasksController < ApplicationController
                                  :tag,
                                  :due_date,
                                  :user_id,
+                                 :project_id,
                                   )
   end
 
