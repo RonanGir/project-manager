@@ -1,0 +1,20 @@
+.project-header {
+  background-color: $dark-gray;
+  padding: 15px;
+  color: $white;
+  display: flex;
+  align-items: center;
+
+  .back-to-list {
+    padding: 0 15px;
+  }
+ .project-header-main {
+    padding: 0 15px;
+  }
+  .project-header-description {
+    padding: 0 15px;
+  }
+  .project-header-footer {
+    padding: 0 15px;
+  }
+}

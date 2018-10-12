@@ -17,11 +17,33 @@
     min-height: 150px;
   }
 
+  .project-card-footer {
+    padding: 15px;
+    text-align: right;
+  }
 }
 
-
-
-
-
-
 /* Project index stop */
+
+/* Project show start */
+
+.task-card {
+  background-color: $white;
+  margin: 10px;
+  box-shadow: 3px 3px 3px $dark-gray;
+  .task-card-header {
+    background-color: $gray;
+    color: $white;
+    padding: 5px 15px;
+  }
+  .task-card-content {
+    padding: 5px 15px;
+  }
+
+  .task-card-footer {
+    padding: 5px 15px;
+    text-align: right;
+  }
+}
+
+/* Project show stop */
