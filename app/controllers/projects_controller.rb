@@ -54,8 +54,8 @@ class ProjectsController < ApplicationController
                                     :sold_price,
                                     :sold_hours,
                                     :start_date,
-                                    # :end_date,
-                                    :user_id,
+                                    :end_date,
+                                    :team_id,
                                     )
   end
 

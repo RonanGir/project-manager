@@ -10,6 +10,8 @@
           <%= f.input :sold_hours %>
           <%= f.input :start_date, as: :date, start_year: Date.today.year,
                               order: [:day, :month, :year] %>
+          <%= f.input :end_date, as: :date, start_year: Date.today.year,
+                              order: [:day, :month, :year] %>
           <%= f.submit "Start project", class: "btn btn-success" %>
 
         <% end %>
