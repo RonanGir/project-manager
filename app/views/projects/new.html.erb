@@ -2,13 +2,14 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
       <div class="new-form">
-        <%= simple_form_for @project do |f| %>
-          <%= f.input :name %>
-          <%= f.input :description %>
-          <%= f.input :tag %>
+        <%= simple_form_for(@project) do |f| %>
+          <%= f.input :name, placeholder: "Your project name", input_html: { maxlength: 50 } %>
+          <%= f.input :description, placeholder: "Your project description", input_html: { maxlength: 200 } %>
+          <%= f.input :tag, collection: ["seo", "sea", "création de site", "refonte de site"] %>
           <%= f.input :sold_price %>
           <%= f.input :sold_hours %>
-          <%= f.input :start_date %>
+          <%= f.input :start_date, as: :date, start_year: Date.today.year,
+                              order: [:day, :month, :year] %>
           <%= f.submit "Start project", class: "btn btn-success" %>
 
         <% end %>
