@@ -15,7 +15,6 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project.save
     if @project.save
       redirect_to projects_path
     else
@@ -28,8 +27,6 @@ class ProjectsController < ApplicationController
 
   def update
     @project.update(project_params)
-    @project.save
-
     if @project.save
       redirect_to projects_path
     else
